@@ -41,6 +41,7 @@
         result = 'You win.';
       }
       alert(`You picked rock. Computer picked ${userMove} ${result}`);
+      userMove = '';
     ">
       Rock
     </button>
@@ -75,6 +76,7 @@
       }
 
       alert(`You picked paper. Computer picked ${userMove} ${result}`);
+      userMove = '';
     ">
       Paper
       Scissors
@@ -110,6 +112,7 @@
     }
 
     alert(`You picked scissors. Computer picked ${userMove} ${result}`);
+    userMove = '';
   ">
       Scissors
     </button>
@@ -142,8 +145,6 @@
       else if(userMove === 'scissors'){
         result = 'You loose.';
       }
-
-      alert(`You picked paper. Computer picked ${userMove} ${result}`);
     
 
 
