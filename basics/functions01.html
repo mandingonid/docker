@@ -59,8 +59,8 @@
       else if(computerMove === 'scissors'){
         result = 'Tie.';
       }
-      alert(`You picked scissors. Computer picked ${computerMove} ${result}`);
 
+      alert(`You picked scissors. Computer picked ${computerMove} ${result}`);
     ">Scissors</button>
 
     <script>
@@ -70,7 +70,7 @@
       function pickComputerMove(){
 
         const randomNumber = Math.random(); 
-      
+
         console.log(randomNumber);
         if(randomNumber >= 0 && randomNumber < 1/3){
           computerMove = 'rock';
