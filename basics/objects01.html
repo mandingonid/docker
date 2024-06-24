@@ -17,18 +17,42 @@
 
     <p>This is sample code for Javascript objects/structs/dictionaries.</p>
 
-    <button>Rock</button>
-
-    <button>Paper</button>
-
-    <button>Scissors</button>
-
-    <button>Reset Score</button>
-
+    <button onclick="
     
+    ">Rock</button>
+
+
+    <button onclick="
+    
+    ">Paper</button>
+
+
+    <button onclick="
+    
+    ">Scissors</button>
+
+
+    <button onclick="
+    
+    ">Reset Score</button>
+
+
     <script>
+      const product = {
+        name: 'socks',
+        price: '1090',
+        newProperty: true
+      };
 
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
 
+      product.name = 'cotton socks';
+      console.log(product);
+
+      product.addRuntime = true;
+      console.log(product);
 
     </script>
 
