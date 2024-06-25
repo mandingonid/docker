@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Rochambeau Score</title>
+    <style>
+
+    </style>
+    
+  </head>
+
+  <body>
+    <p>Rochembo with Score</p>
+
+    <button onclick="
+      moveCopy = pickComputerMove();
+
+      if(moveCopy === 'rock'){
+        result = 'Tie.';
+        scoreTotal.ties++;
+
+      }
+      else if(moveCopy === 'paper'){
+        result = 'You loose.';
+        scoreTotal.losses++;
+      }
+      else if(moveCopy === 'scissors'){
+        result = 'You win.';
+        scoreTotal.wins++;
+      }
+      localStorage.setItem("score", jsonStringy'hello');
+      alert(`You picked rock. Computer picked ${moveCopy} ${result}
+Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`);
+    ">Rock</button>
+
+
+    <button onclick="
+      moveCopy = pickComputerMove();
+
+      if(moveCopy === 'rock'){
+        result = 'You win.';
+        scoreTotal.wins++;
+      }
+      else if(moveCopy === 'paper'){
+        result = 'Tie.';
+        scoreTotal.ties++;
+      }
+      else if(moveCopy === 'scissors'){
+        result = 'You loose.';
+        scoreTotal.losses++;
+      }
+
+      alert(`You picked paper. Computer picked ${moveCopy} ${result}
+Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}
+      `);
+    ">Paper</button>
+
+
+    <button onclick="  
+      console.log(localStorage.getItem('score');)
+      moveCopy = pickComputerMove();
+
+      if(moveCopy === 'rock'){
+        result = 'You lose.';
+        scoreTotal.losses++;
+      }
+      else if(moveCopy === 'paper'){
+        result = 'You win.';
+        scoreTotal.wins++;
+      }
+      else if(moveCopy === 'scissors'){
+        result = 'Tie.';
+        scoreTotal.ties++;
+      }
+
+      alert(`You picked scissors. Computer picked ${moveCopy} ${result}
+Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}
+      `);
+    ">Scissors</button>
+
+    <button onclick="
+      console.log(scoreTotal);
+      scoreTotal.wins = 0;
+      scoreTotal.losses = 0;
+      scoreTotal.ties = 0;
+      console.log(scoreTotal);
+      localStorage.removeItem('scoreTotal');
+    ">Reset Score</button>
+
+    <script>
+      const scoreTotal = 
+      let result = '';
+      let moveCopy = '';
+
+      const scoreTotal = {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
+
+      function pickComputerMove(){
+
+        const randomNumber = Math.random(); 
+        let computerMove = '';
+
+        console.log(randomNumber);
+        if(randomNumber >= 0 && randomNumber < 1/3){
+          computerMove = 'rock';
+          console.log('rock');
+        }
+        else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+          computerMove = 'paper';
+          console.log('paper');
+        }
+        else {
+          computerMove = 'scissors';
+          console.log('scissors');
+        }
+
+        return computerMove;
+      }
+
+    </script>
+
+
+  </body>
+
+
+
+</html>
