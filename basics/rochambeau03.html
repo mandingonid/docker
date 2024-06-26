@@ -46,8 +46,13 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       console.log(scoreTotal);
     ">Reset Score</button>
 
+    <button onclick="
+    
+    ">Quit</button>
+
+
     <script>
-      const scoreTotal = JSON.parst(localStorage.getItem('scoreTotal'));
+
       let result = '';
       let moveCopy = '';
 
@@ -127,7 +132,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
           console.log('scissors');
         }
 
-        return computerMove;
+        return computerMove
       }
 
       function playGame(){
