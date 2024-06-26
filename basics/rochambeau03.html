@@ -15,21 +15,7 @@
 
     <button onclick="
       moveCopy = pickComputerMove();
-
-      if(moveCopy === 'rock'){
-        result = 'Tie.';
-        scoreTotal.ties++;
-
-      }
-      else if(moveCopy === 'paper'){
-        result = 'You loose.';
-        scoreTotal.losses++;
-      }
-      else if(moveCopy === 'scissors'){
-        result = 'You win.';
-        scoreTotal.wins++;
-      }
-      localStorage.setItem("score", jsonStringy'hello');
+      result = computeResult('rock');
       alert(`You picked rock. Computer picked ${moveCopy} ${result}
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`);
     ">Rock</button>
@@ -37,20 +23,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
 
     <button onclick="
       moveCopy = pickComputerMove();
-
-      if(moveCopy === 'rock'){
-        result = 'You win.';
-        scoreTotal.wins++;
-      }
-      else if(moveCopy === 'paper'){
-        result = 'Tie.';
-        scoreTotal.ties++;
-      }
-      else if(moveCopy === 'scissors'){
-        result = 'You loose.';
-        scoreTotal.losses++;
-      }
-
+      result = computeResult('paper');
       alert(`You picked paper. Computer picked ${moveCopy} ${result}
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}
       `);
@@ -58,22 +31,8 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
 
 
     <button onclick="  
-      console.log(localStorage.getItem('score');)
       moveCopy = pickComputerMove();
-
-      if(moveCopy === 'rock'){
-        result = 'You lose.';
-        scoreTotal.losses++;
-      }
-      else if(moveCopy === 'paper'){
-        result = 'You win.';
-        scoreTotal.wins++;
-      }
-      else if(moveCopy === 'scissors'){
-        result = 'Tie.';
-        scoreTotal.ties++;
-      }
-
+      result = computeResult('scissors');
       alert(`You picked scissors. Computer picked ${moveCopy} ${result}
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}
       `);
@@ -85,11 +44,10 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       scoreTotal.losses = 0;
       scoreTotal.ties = 0;
       console.log(scoreTotal);
-      localStorage.removeItem('scoreTotal');
     ">Reset Score</button>
 
     <script>
-      const scoreTotal = 
+      const scoreTotal = JSON.parst(localStorage.getItem('scoreTotal'));
       let result = '';
       let moveCopy = '';
 
@@ -98,6 +56,57 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
         losses: 0,
         ties: 0
       };
+
+      // Function to compare usre move and computer move and assign the result
+      // and update the score.
+      function computeResult(buttonSelect){
+        if(buttonSelect === 'rock'){}
+          if(moveCopy === 'rock'){
+          result = 'Tie.';
+          scoreTotal.ties++;
+
+          }
+          else if(moveCopy === 'paper'){
+            result = 'You loose.';
+            scoreTotal.losses++;
+          }
+          else if(moveCopy === 'scissors'){
+            result = 'You win.';
+            scoreTotal.wins++;
+          }
+        }
+
+        if(buttonSelect === 'paper'){
+          if(moveCopy === 'rock'){
+            result = 'You win.';
+            scoreTotal.wins++;
+          }
+          else if(moveCopy === 'paper'){
+            result = 'Tie.';
+            scoreTotal.ties++;
+          }
+          else if(moveCopy === 'scissors'){
+            result = 'You loose.';
+            scoreTotal.losses++;
+          }
+        }
+
+        if(buttonSelect === 'scissors'){
+          if(moveCopy === 'rock'){
+            result = 'You lose.';
+            scoreTotal.losses++;
+          }
+          else if(moveCopy === 'paper'){
+            result = 'You win.';
+            scoreTotal.wins++;
+          }
+          else if(moveCopy === 'scissors'){
+            result = 'Tie.';
+            scoreTotal.ties++;
+          }
+        }
+        return result;
+      }
 
       function pickComputerMove(){
 
@@ -121,6 +130,10 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
         return computerMove;
       }
 
+      function playGame(){
+
+        
+      }
     </script>
 
 
