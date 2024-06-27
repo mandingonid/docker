@@ -49,6 +49,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       stringScore = JSON.stringify(scoreTotal);
       console.log(stringScore);
       console.log(scoreTotal);
+      
     ">Quit</button>
 
 
@@ -63,7 +64,8 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
         ties: 0
       };
 
-  
+      //
+      //
       function computeResult(buttonSelect){
         if(buttonSelect === 'rock'){
           if(moveCopy === 'rock'){
@@ -115,6 +117,8 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
         }
       }
     
+      //
+      //
       function pickComputerMove(){
         let computerMove = '';
         const randomNumber = Math.random(); 
