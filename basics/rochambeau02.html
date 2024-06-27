@@ -29,7 +29,7 @@
         result = 'You win.';
         scoreTotal.wins++;
       }
-
+      localStorage.setItem("message", 'hello');
       alert(`You picked rock. Computer picked ${moveCopy} ${result}
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`);
     ">Rock</button>
