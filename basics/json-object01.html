@@ -17,7 +17,30 @@
 
 
     <script>
+      const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function function1(){
+          console.log('function inside object');
+        }
+      };
 
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['name']);
+      console.log(product2['delivery-time']);
+
+      console.log(product2.rating.count);
+      product2.fun();
+
+      // Creating JSON meta strings
+      console.log(type of console.log);
+      const jsonString = JSON.stringify(product2);
+      JSON.parse(jsonString);
 
     </script>
 
