@@ -45,24 +45,39 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
     ">Reset Score</button>
 
     <button onclick="
-      let stringScore = '';
-      stringScore = JSON.stringify(scoreTotal);
-      console.log(stringScore);
-      console.log(scoreTotal);
-      
+      if(!savedScore){
+        let stringScore = '';
+        stringScore = JSON.stringify(scoreTotal);
+        console.log(stringScore);
+        console.log(scoreTotal);
+        localStorage.setitem(keyName, stringScore);
+        localStorage.setitem(keySaved, "true")
+        savedScore = true;
+      }      
     ">Quit</button>
 
 
     <script>
-
+      let tempObj={};
       let result = '';
       let moveCopy = '';
-
-      const scoreTotal = {
+      let savedScore = new Boolean(false);
+      let scoreTotal = {
         wins: 0,
         losses: 0,
-        ties: 0
+        ties: 0,
       };
+
+      const keyName = 'scoreKey';
+      const keySaved = 'savedKey';
+
+      // Recall/recover stored score from last game
+      if("true" === localStorage.getItem(keySaved)){
+        tempObj = localStorage.getItem(keyName);
+        console.log(`Retrieved scores: ${tempObj}`);
+        scoreTotal = JSON.parse(tempObj);
+        console.log('previous score: ${scoreTotal}');
+      }
 
       //
       //
@@ -98,7 +113,6 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
           }
           return result;
         }
-      
       
         if(buttonSelect === 'scissors'){
           if(moveCopy === 'rock'){
