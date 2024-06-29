@@ -46,13 +46,13 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
     ">Reset Score</button>
 
     <button onclick="
-      if(!savedScore){
+  
         let stringScore = '';
         stringScore = JSON.stringify(scoreTotal);
         console.log(stringScore);
         console.log(scoreTotal);
         houseKeeping(stringScore);
-      }     
+  
     ">Quit</button>
 
 
@@ -60,7 +60,6 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       let tempObj={};
       let result = '';
       let moveCopy = '';
-      let savedScore = false;
       let scoreTotal = {
         wins: 0,
         losses: 0,
