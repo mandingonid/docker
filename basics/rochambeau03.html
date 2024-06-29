@@ -71,9 +71,9 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       const keySaved = 'savedKey';
 
       // Recall/recover stored score from last game
-      let needToRecall? = localStorage.getItem(keySaved);
-      console.log(needToRecall?);
-      if("true" === needToRecall?){
+      let needToRecall = localStorage.getItem(keySaved);
+      console.log(needToRecall);
+      if("true" === needToRecall){
         tempObj = localStorage.getItem(keyScore);
         console.log(`Retrieved scores: ${tempObj}`);
         scoreTotal = JSON.parse(tempObj);
