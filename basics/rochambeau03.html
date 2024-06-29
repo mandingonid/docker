@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <p>Rochembo with Score</p>
+    <p>Rochambeau with Score</p>
 
     <button onclick="
       moveCopy = pickComputerMove();
@@ -78,11 +78,11 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       }
 
       function houseKeeping(scoreString){
+        console.log(`Setting up persistent write: ${keyScore} ${scoreString}`);
         localStorage.setitem(keyName, scoreString);
         localStorage.setitem(keySaved, 'true');
         savedScore = true;
       }
-
 
       //
       //
