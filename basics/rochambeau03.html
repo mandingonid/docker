@@ -70,20 +70,19 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       const keySaved = 'savedKey';
 
       // Recall/recover stored score from last game
-      // if("true" === localStorage.getItem(keySaved)){
-      if(true){
-        let temp = localStorage.gitItem(keySaved);
-        console.log(`retrieved key: ${temp}`);
+      if("true" === localStorage.getItem(keySaved)){
         tempObj = localStorage.getItem(keyScore);
         console.log(`Retrieved scores: ${tempObj}`);
         scoreTotal = JSON.parse(tempObj);
         console.log('previous score: ${scoreTotal}');
       }
+      else
+        houseKeeping(JSON.stringify(scoreTotal));
 
       function houseKeeping(scoreString){
         console.log(`Setting up persistent write: ${keyScore} ${scoreString}`);
-        localStorage.setitem(keySaved, 'true');
-        localStorage.setitem(keyScore, scoreString); 
+        localStorage.setItem(keySaved, 'true');
+        localStorage.setItem(keyScore, scoreString); 
         savedScore = true;
       }
 
