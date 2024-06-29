@@ -66,12 +66,12 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
         ties: 0
       };
 
-      const keyName = 'scoreKey';
+      const keyScore = 'scoreKey';
       const keySaved = 'savedKey';
 
       // Recall/recover stored score from last game
       if("true" === localStorage.getItem(keySaved)){
-        tempObj = localStorage.getItem(keyName);
+        tempObj = localStorage.getItem(keyScore);
         console.log(`Retrieved scores: ${tempObj}`);
         scoreTotal = JSON.parse(tempObj);
         console.log('previous score: ${scoreTotal}');
