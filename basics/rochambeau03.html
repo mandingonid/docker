@@ -50,10 +50,8 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
         stringScore = JSON.stringify(scoreTotal);
         console.log(stringScore);
         console.log(scoreTotal);
-        localStorage.setitem(keyName, stringScore);
-        localStorage.setitem(keySaved, 'true');
-        savedScore = true;
-      }   
+        houseKeeping(stringScore);
+      }     
     ">Quit</button>
 
 
@@ -78,6 +76,13 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
         scoreTotal = JSON.parse(tempObj);
         console.log('previous score: ${scoreTotal}');
       }
+
+      function houseKeeping(scoreString){
+        localStorage.setitem(keyName, scoreString);
+        localStorage.setitem(keySaved, 'true');
+        savedScore = true;
+      }
+
 
       //
       //
