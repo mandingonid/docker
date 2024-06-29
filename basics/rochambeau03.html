@@ -41,6 +41,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       scoreTotal.wins = 0;
       scoreTotal.losses = 0;
       scoreTotal.ties = 0;
+      localStorage.setItem(keySaved, 'false');
       console.log(scoreTotal);
     ">Reset Score</button>
 
