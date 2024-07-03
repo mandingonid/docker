@@ -94,12 +94,11 @@
 
     <p>Adding document object model to rochambeau </p>
 
-    <button onclick="">Hello</button>
-
     <p>Rochambeau with Score</p>
+    
 
     <button class="js-button-rock button-rock" onclick="
-      document.querySelector('.js-botton-rock');
+      document.querySelector('.js-button-rock');
       moveCopy = pickComputerMove();
       result = computeResult('rock');
       alert(`You picked rock. Computer picked ${moveCopy} ${result}
@@ -108,6 +107,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
 
 
     <button class="js-button-paper button-paper" onclick="
+      document.querySelector('.js-button-paper');
       moveCopy = pickComputerMove();
       result = computeResult('paper');
       alert(`You picked paper. Computer picked ${moveCopy} ${result}
@@ -116,6 +116,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
 
 
     <button class="js-button-scissors button-scissors" onclick="  
+      document.querySelector('.js-button-scissors');
       moveCopy = pickComputerMove();
       result = computeResult('scissors');
       alert(`You picked scissors. Computer picked ${moveCopy} ${result}
@@ -123,6 +124,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
     ">Scissors</button>
 
     <button class="js-button-reset button-reset"  onclick="
+      document.querySelector('.js-button-reset');
       console.log(scoreTotal);
       scoreTotal.wins = 0;
       scoreTotal.losses = 0;
@@ -132,6 +134,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
     ">Reset Score</button>
 
     <button class="js-button-quit button-quit" onclick="
+      document.querySelector('.js-button-quit');
       let stringScore = '';
       stringScore = JSON.stringify(scoreTotal);
       console.log(stringScore);
@@ -265,7 +268,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
         return computerMove;
       }
 
-      
+
     </script>
   
   </body>
