@@ -21,11 +21,12 @@
           padding-top: 10px;
           padding-bottom: 10px;
           padding-left: 10px;
-          padding-right: 30px;
+          padding-right: 10px;
           font-weight: bold;
           border-radius: 50px;
           cursor: pointer;
           margin-bottom: 20px;
+          margin-right: 15px;
         }
 
         .button-paper{
@@ -34,12 +35,14 @@
           color:  black;
           padding-top: 10px;
           padding-bottom: 10px;
-          padding-left: 30px;
-          padding-right: 30px;
+          padding-left: 10px;
+          padding-right: 10px;
           font-weight: bold;
           border-radius: 50px;
           cursor: pointer;
           margin-bottom: 20px;
+          margin-left: 15px;
+          margin-right: 15px;
         }
 
         .button-scissors{
@@ -48,12 +51,14 @@
           color:  black;
           padding-top: 10px;
           padding-bottom: 10px;
-          padding-left: 30px;
-          padding-right: 30px;
+          padding-left: 10px;
+          padding-right: 10px;
           font-weight: bold;
           border-radius: 50px;
           cursor: pointer;
           margin-bottom: 20px;
+          margin-left: 15px;
+          margin-right: 15px;
         }
 
         .button-reset{
@@ -62,12 +67,14 @@
           color:  black;
           padding-top: 10px;
           padding-bottom: 10px;
-          padding-left: 30px;
-          padding-right: 30px;
+          padding-left: 10px;
+          padding-right: 10px;
           font-weight: bold;
           border-radius: 50px;
           cursor: pointer;
           margin-bottom: 20px;
+          margin-left: 15px;
+          margin-right: 15px;
         }
 
         .button-quit{
@@ -76,13 +83,20 @@
           color:  black;
           padding-top: 10px;
           padding-bottom: 10px;
-          padding-left: 30px;
+          padding-left: 10px;
           padding-right: 10px;
           font-weight: bold;
           border-radius: 50px;
           cursor: pointer;
           margin-bottom: 20px;
+          margin-left: 15px.
         }
+        .is-button-quit{
+          background-color: green;
+          color: black;
+        }
+
+
 
       </style>
 
@@ -133,15 +147,21 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       console.log(scoreTotal);
     ">Reset Score</button>
 
-    <button class="js-button-quit button-quit" onclick="
+    <button class="js-button-quit button-quit is-button-quit" onclick="
       buttonElementQuit  = document.querySelector('.js-button-quit');
       let stringScore = '';
       stringScore = JSON.stringify(scoreTotal);
       console.log(stringScore);
       console.log(scoreTotal);
       houseKeeping(stringScore);
+      if(buttonElementQuit.innerText === 'Quit'){
+        buttonElementQuit.innerHTML = 'Quit';
+        buttonElementQuit.classList.add('is-button-quit');
+      } else {
+        buttonElementQuit.innerHTML = 'Quit';
+        buttonElementQuit.classList.remove('is-button-quit');
+      }
     ">Quit</button>
-
 
     <script>
 
