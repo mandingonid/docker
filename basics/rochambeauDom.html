@@ -96,6 +96,10 @@
           color: black;
         }
 
+        .js-display-score{
+          font-weight: bold;
+          color: purple;
+        }
 
 
       </style>
@@ -137,6 +141,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`);
     ">Scissors</button>
 
+
     <button class="js-button-reset button-reset"  onclick="
       buttonElementReset = document.querySelector('.js-button-reset');
       console.log(scoreTotal);
@@ -162,6 +167,8 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
         buttonElementQuit.classList.remove('is-button-quit');
       }
     ">Quit</button>
+
+    <p class="js-display-score"></p>
 
     <script>
 
@@ -231,6 +238,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
             result = 'You win.';
             scoreTotal.wins++;
           }
+          document.querySelector('.js-display-score').innerHTML=`Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
           return result;
         }
 
@@ -247,6 +255,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
             result = 'You loose.';
             scoreTotal.losses++;
           }
+          document.querySelector('.js-display-score').innerHTML=`Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
           return result;
         }
       
@@ -263,6 +272,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
             result = 'Tie.';
             scoreTotal.ties++;
           }
+          document.querySelector('.js-display-score').innerHTML=`Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
           return result;
         }
       }
