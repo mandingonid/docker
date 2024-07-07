@@ -41,18 +41,17 @@
 
 
     <script>
-      let item;
-      document.getElememtById('calculateButton').onclick=function(){
-        item = document.getElementById('userCost').value;
-        // document.getElementById('myH1').textContent = `Price is ${item}`;
-      };
-
+      let item = -1;
 
       function calculateTotal(){
         let shipping = 0;
-        const inputElement = document.querySelector('.js-cost-input');
-        console.log(inputElement.value);
-        console.log(typeof item);
+        // const inputElement = document.querySelector('.js-cost-input');
+        // console.log(inputElement.value);
+        // console.log(typeof item);
+        item = Number(document.getElementById('userCost').value);
+        // document.getElementById('myH1').textContent = `Price is ${item}`; 
+        console.log(`The value retrieved: ${item}`);   
+
         if(item >= 40){
           shipping = 0;
         }else{
