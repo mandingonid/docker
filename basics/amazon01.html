@@ -22,8 +22,8 @@
 
     <p>Orders $40 and over= Free shipping</p>
 
-    <input placeholder="Cost of order">
-    <button class="js-cost-input" onclick="
+    <input id='userCost' placeholder="Cost of order">
+    <button class="js-cost-input" id='calculateButton' onclick="
       calculateTotal();
     ">Calculate</button>
 
@@ -41,11 +41,17 @@
 
 
     <script>
+      let item;
+      document.getElememtById('calculateButton').onclick=function(){
+        item = document.getElementById('userCost').value;
+        // document.getElementById('myH1').textContent = `Price is ${item}`;
+      };
+
 
       function calculateTotal(){
         let shipping = 0;
         const inputElement = document.querySelector('.js-cost-input');
-        let item = Number(inputElement.value);
+        console.log(inputElement.value);
         console.log(typeof item);
         if(item >= 40){
           shipping = 0;
