@@ -22,7 +22,12 @@
 
     <p>Orders $40 and over= Free shipping</p>
 
-    <input id='userCost' onkeydown="console.log(event.key); if(event.key === 'Enter'){calculateTotal;}" placeholder="Cost of order">
+    <input id='userCost' onkeydown="console.log(event.key);
+      if(event.key === 'Enter'){calculateTotal;}
+     "
+      placeholder="Cost of order"
+    >
+
     <button class="js-cost-input" id='calculateButton' onclick="
       calculateTotal();
     ">Calculate</button>
