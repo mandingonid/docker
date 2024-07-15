@@ -4,113 +4,12 @@
 
   <head>
 
-      <title>Document Object Model</title>
+      <title>Rochambeau</title>
 
-      <style>
-        body{
-          background-color: black;
-          color: white;
-          font-family: Arial;
-        }
-
-        .title{
-          font-size: 30px;
-          font-weight: bold;
-        }
-
-        .button-rock{
-          border: none;
-          background-color: gray;
-          color:  black;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          padding-left: 10px;
-          padding-right: 10px;
-          font-weight: bold;
-          border-radius: 10px;
-          cursor: pointer;
-          margin-bottom: 20px;
-          margin-right: 15px;
-        }
-
-        .button-paper{
-          border: none;
-          background-color: gray;
-          color:  black;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          padding-left: 10px;
-          padding-right: 10px;
-          font-weight: bold;
-          border-radius: 10px;
-          cursor: pointer;
-          margin-bottom: 20px;
-          margin-left: 15px;
-          margin-right: 15px;
-        }
-
-        .button-scissors{
-          border: none;
-          background-color: gray;
-          color:  black;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          padding-left: 10px;
-          padding-right: 10px;
-          font-weight: bold;
-          border-radius: 10px;
-          cursor: pointer;
-          margin-bottom: 20px;
-          margin-left: 15px;
-          margin-right: 15px;
-        }
-
-        .button-reset{
-          border: none;
-          background-color: gray;
-          color:  black;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          padding-left: 10px;
-          padding-right: 10px;
-          font-weight: bold;
-          border-radius: 50px;
-          cursor: pointer;
-          margin-bottom: 20px;
-          margin-left: 15px;
-          margin-right: 15px;
-        }
-
-        .button-quit{
-          border: none;
-          background-color: gray;
-          color:  black;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          padding-left: 10px;
-          padding-right: 10px;
-          font-weight: bold;
-          border-radius: 50px;
-          cursor: pointer;
-          margin-bottom: 20px;
-          margin-left: 15px.
-        }
-        .is-button-quit{
-          background-color: green;
-          color: black;
-        }
-
-        .display-score{
-          font-weight: bold;
-          background-color: rgb(119, 127, 79);
-          color: purple;
-          max-width: 230px;
-          margin-top: 50px;
-          margin-bottom: 50px;
-        }
-
-
-      </style>
+      <link
+        rel="stylesheet"
+        href="../styles/rochambeauDom2.css"
+      > 
 
   </head>
 
@@ -129,7 +28,9 @@
       result = computeResult('rock');
       alert(`You picked rock. Computer picked ${moveCopy} ${result}
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`);
-    "><img src="./emojis/rock-emoji.png"></button>
+    ">
+      <img src="../emojis/rock-emoji.png" class="move-icon move-button">
+    </button>
 
 
     <button class="js-button-paper button-paper" onclick="
@@ -138,7 +39,9 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       result = computeResult('paper');
       alert(`You picked paper. Computer picked ${moveCopy} ${result}
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`);
-    "><img src='./emojis/paper-emoji.png'></button>
+    ">
+      <img src='../emojis/paper-emoji.png' class="move-icon move-button">
+    </button>
 
 
     <button class="js-button-scissors button-scissors" onclick="  
@@ -147,9 +50,18 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       result = computeResult('scissors');
       alert(`You picked scissors. Computer picked ${moveCopy} ${result}
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`);
-    "><img src="./emojis/scissors-emoji.png"></button>
+    ">
+      <img src="../emojis/scissors-emoji.png" class="move-icon move-button">
+    </button>
 
     <p class="js-display-score display-score"></p>
+
+    <p class="js-moves"></p>
+
+    <p class="js-score"></p>
+
+    <p class="bottom-make-space"></p>
+    
 
     <button class="js-button-reset button-reset"  onclick="
       buttonElementReset = document.querySelector('.js-button-reset');
@@ -179,139 +91,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
 
   
 
-    <script>
-
-      /*
-      let htmlElement = document.querySelector('.button-reset ');
-      console.log(htmlElement);
-
-    
-      document.body.innerHTML = 'Hello';
-      document.title = "Good Job";
-      (document.querySelector('.js-button-rock')).innerHTML;  
-      
-      document.title = 'Rochambeau w/ DOM';
-
-      // Import HTML body into javascript document
-      document.body;
-      
-      // Gain control of all HTML within the javascript body
-      document.body.innerHTML;
-
-
-    */
-
-    let tempObj={};
-      let result = '';
-      let moveCopy = '';
-      let scoreTotal = {
-        wins: 0,
-        losses: 0,
-        ties: 0,
-        method: function display(){console.log(`display score method: ${scoreTotal}`)}
-      };
-
-      const keyScore = 'scoreKey';
-      const keySaved = 'savedKey';
-      scoreTotal.method();
-      console.log(scoreTotal);
-
-      // Recall/recover stored score from last game
-      let needToRecall = localStorage.getItem(keySaved);
-      console.log(needToRecall);
-      if("true" === needToRecall){
-        tempObj = localStorage.getItem(keyScore);
-        console.log(`Retrieved scores: ${tempObj}`);
-        scoreTotal = JSON.parse(tempObj);
-        console.log(`previous score: ${scoreTotal}`);
-      }
-      else
-        houseKeeping(JSON.stringify(scoreTotal));
-
-      function houseKeeping(scoreString){
-        console.log(`Setting up persistent write: ${keyScore} ${scoreString}`);
-        localStorage.setItem(keySaved, 'true');
-        localStorage.setItem(keyScore, scoreString); 
-      }
-
-      //
-      //
-      function computeResult(buttonSelect){
-        if(buttonSelect === 'rock'){
-          if(moveCopy === 'rock'){
-            result = 'Tie.';
-            scoreTotal.ties++;
-          }
-          else if(moveCopy === 'paper'){
-            result = 'You loose.';
-            scoreTotal.losses++;
-          }
-          else if(moveCopy === 'scissors'){
-            result = 'You win.';
-            scoreTotal.wins++;
-          }
-          document.querySelector('.js-display-score').innerHTML=`  Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
-          return result;
-        }
-
-        if(buttonSelect === 'paper'){
-          if(moveCopy === 'rock'){
-            result = 'You win.';
-            scoreTotal.wins++;
-          }
-          else if(moveCopy === 'paper'){
-            result = 'Tie.';
-            scoreTotal.ties++;
-          }
-          else if(moveCopy === 'scissors'){
-            result = 'You loose.';
-            scoreTotal.losses++;
-          }
-          document.querySelector('.js-display-score').innerHTML=`  Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
-          return result;
-        }
-      
-        if(buttonSelect === 'scissors'){
-          if(moveCopy === 'rock'){
-            result = 'You lose.';
-            scoreTotal.losses++;
-          }
-          else if(moveCopy === 'paper'){
-            result = 'You win.';
-            scoreTotal.wins++;
-          }
-          else if(moveCopy === 'scissors'){
-            result = 'Tie.';
-            scoreTotal.ties++;
-          }
-          document.querySelector('.js-display-score').innerHTML=`  Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
-          return result;
-        }
-      }
-    
-      //
-      //
-      function pickComputerMove(){
-        let computerMove = '';
-        const randomNumber = Math.random(); 
-        console.log(randomNumber);
-        if(randomNumber >= 0 && randomNumber < 1/3){
-          computerMove = 'rock';
-          console.log('rock');
-        }
-        else if (randomNumber >= 1/3 && randomNumber < 2/3) {
-          computerMove = 'paper';
-          console.log('paper');
-        }
-        else {
-          computerMove = 'scissors';
-          console.log('scissors');
-        }
-        return computerMove;
-      }
-
-
-    </script>
+    <script src="../scripts/rochembeauDom2.js"> </script>
   
   </body>
 
