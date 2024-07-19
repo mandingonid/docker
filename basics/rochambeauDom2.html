@@ -8,7 +8,7 @@
 
       <link
         rel="stylesheet"
-        href="../styles/rochambeauDom2.css"
+        href="./styles/rochambeauDom2.css"
       > 
 
   </head>
@@ -29,7 +29,7 @@
       alert(`You picked rock. Computer picked ${moveCopy} ${result}
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`);
     ">
-      <img src="../emojis/rock-emoji.png" class="move-icon move-button">
+      <img src="./emojis/rock-emoji.png" class="move-icon move-button">
     </button>
 
 
@@ -40,7 +40,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       alert(`You picked paper. Computer picked ${moveCopy} ${result}
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`);
     ">
-      <img src='../emojis/paper-emoji.png' class="move-icon move-button">
+      <img src='./emojis/paper-emoji.png' class="move-icon move-button">
     </button>
 
 
@@ -51,14 +51,14 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       alert(`You picked scissors. Computer picked ${moveCopy} ${result}
 Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`);
     ">
-      <img src="../emojis/scissors-emoji.png" class="move-icon move-button">
+      <img src="./emojis/scissors-emoji.png" class="move-icon move-button">
     </button>
 
     <p class="js-display-score display-score"></p>
 
-    <p class="js-moves"></p>
+    <p class="js-moves moves"></p>
 
-    <p class="js-score"></p>
+    <p class="js-score score"></p>
 
     <p class="bottom-make-space"></p>
     
@@ -69,6 +69,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       scoreTotal.wins = 0;
       scoreTotal.losses = 0;
       scoreTotal.ties = 0;
+      scoreTotal.chips = 200;
       localStorage.setItem(keySaved, 'false');
       console.log(scoreTotal);
     ">Reset Score</button>
@@ -91,7 +92,7 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
 
   
 
-    <script src="../scripts/rochembeauDom2.js"> </script>
+    <script src="./scripts/rochambeauDom2.js"> </script>
   
   </body>
 
