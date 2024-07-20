@@ -1,23 +1,5 @@
 
-      /*
-      let htmlElement = document.querySelector('.button-reset ');
-      console.log(htmlElement);
 
-    
-      document.body.innerHTML = 'Hello';
-      document.title = "Good Job";
-      (document.querySelector('.js-button-rock')).innerHTML;  
-      
-      document.title = 'Rochambeau w/ DOM';
-
-      // Import HTML body into javascript document
-      document.body;
-      
-      // Gain control of all HTML within the javascript body
-      document.body.innerHTML;
-
-
-    */
 
       let tempObj={};
       let result = '';
