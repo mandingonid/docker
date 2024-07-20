@@ -74,24 +74,35 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       console.log(scoreTotal);
     ">Reset Score</button>
 
-    <button class="js-button-quit button-quit is-button-quit" onclick="
-      buttonElementQuit  = document.querySelector('.js-button-quit');
+    <button class="js-button-save button-save is-button-save" onclick="
+      buttonElementQuit  = document.querySelector('.js-button-save');
       let stringScore = '';
       stringScore = JSON.stringify(scoreTotal);
       console.log(stringScore);
       console.log(scoreTotal);
       houseKeeping(stringScore);
-      if(buttonElementQuit.innerText === 'Quit'){
-        buttonElementQuit.innerHTML = 'Quit';
-        buttonElementQuit.classList.add('is-button-quit');
-      } else {
-        buttonElementQuit.innerHTML = 'Quit';
-        buttonElementQuit.classList.remove('is-button-quit'); 
-      }
-    ">Quit</button> 
+ 
+    ">Save Game</button> 
 
+    <p> </p>
+
+    <button class="js-button-quit button-quit is-button-quit" onclick="
+    buttonElementQuit  = document.querySelector('.js-button-quit');
+    let stringScore = '';
+    stringScore = JSON.stringify(scoreTotal);
+    console.log(stringScore);
+    console.log(scoreTotal);
+    houseKeeping(stringScore);
+    if(buttonElementQuit.innerText === 'Quit'){
+      buttonElementQuit.innerHTML = 'Quit';
+      buttonElementQuit.classList.add('is-button-quit');
+    } else {
+      buttonElementQuit.innerHTML = 'Quit';
+      buttonElementQuit.classList.remove('is-button-quit'); 
+    }
+  ">Quit</button> 
   
-
+ 
     <script src="./scripts/rochambeauDom2.js"> </script>
   
   </body>
