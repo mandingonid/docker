@@ -77,6 +77,22 @@ body{
   margin-right: 15px;
 }
 
+.button-save{
+  border: none;
+  background-color: gray;
+  color:  black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-left: 15px.
+}
+
+
 .button-quit{
   border: none;
   background-color: gray;
