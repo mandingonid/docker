@@ -43,75 +43,78 @@
       //
       function computeResult(buttonSelect){
         playerMove = buttonSelect;
-        if(buttonSelect === 'rock'){
-          if(moveCopy === 'rock'){
-            result = 'You Tie.';
-            scoreTotal.ties++;
+        result = "No Chips";
+        
+        if(scoreTotal.chips > 0){
+          if(buttonSelect === 'rock'){
+            if(moveCopy === 'rock'){
+              result = 'You Tie.';
+              scoreTotal.ties++;
+            }
+            else if(moveCopy === 'paper'){
+              result = 'You Lose.';
+              scoreTotal.losses++;
+              scoreTotal.chips--;
+            }
+            else if(moveCopy === 'scissors'){
+              result = 'You Win.';
+              scoreTotal.wins++;
+              scoreTotal.chips++;
+            }
+            document.querySelector('.js-display-score').innerHTML=`  Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
+            
+            // return result;
           }
-          else if(moveCopy === 'paper'){
-            result = 'You Lose.';
-            scoreTotal.losses++;
-            scoreTotal.chips--;
+
+          if(buttonSelect === 'paper'){
+            if(moveCopy === 'rock'){
+              result = 'You Win.';
+              scoreTotal.wins++;
+              scoreTotal.chips++;
+            }
+            else if(moveCopy === 'paper'){
+              result = 'You Tie.';
+              scoreTotal.ties++;
+            }
+            else if(moveCopy === 'scissors'){
+              result = 'You Lose.';
+              scoreTotal.losses++;
+              scoreTotal.chips--;
+            }
+            document.querySelector('.js-display-score').innerHTML=`  Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
+
+
+            // return result;
           }
-          else if(moveCopy === 'scissors'){
-            result = 'You Win.';
-            scoreTotal.wins++;
-            scoreTotal.chips++;
+        
+          if(buttonSelect === 'scissors'){
+            if(moveCopy === 'rock'){
+              result = 'You Lose.';
+              scoreTotal.losses++;
+              scoreTotal.chips--;
+            }
+            else if(moveCopy === 'paper'){
+              result = 'You Win.';
+              scoreTotal.wins++;
+              scoreTotal.chips++;
+            }
+            else if(moveCopy === 'scissors'){
+              result = 'You Tie.';
+              scoreTotal.ties++;
+            }
+            document.querySelector('.js-display-score').innerHTML=`  Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
+
+
+        
           }
-          document.querySelector('.js-display-score').innerHTML=`  Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
-          
-          // return result;
+          document.querySelector('.js-moves').innerHTML = `You
+            <img src="./emojis/${playerMove}-emoji.png" class="move-icon">
+            <img src="./emojis/${moveCopy}-emoji.png" class="move-icon">
+          Computer`;
+
+          console.log(scoreTotal.chips);
+          document.querySelector('.js-score').innerHTML = `${result} -  Chip Amount $${scoreTotal.chips}`;
         }
-
-        if(buttonSelect === 'paper'){
-          if(moveCopy === 'rock'){
-            result = 'You Win.';
-            scoreTotal.wins++;
-            scoreTotal.chips++;
-          }
-          else if(moveCopy === 'paper'){
-            result = 'You Tie.';
-            scoreTotal.ties++;
-          }
-          else if(moveCopy === 'scissors'){
-            result = 'You Lose.';
-            scoreTotal.losses++;
-            scoreTotal.chips--;
-          }
-          document.querySelector('.js-display-score').innerHTML=`  Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
-
-
-          // return result;
-        }
-      
-        if(buttonSelect === 'scissors'){
-          if(moveCopy === 'rock'){
-            result = 'You Lose.';
-            scoreTotal.losses++;
-            scoreTotal.chips--;
-          }
-          else if(moveCopy === 'paper'){
-            result = 'You Win.';
-            scoreTotal.wins++;
-            scoreTotal.chips++;
-          }
-          else if(moveCopy === 'scissors'){
-            result = 'You Tie.';
-            scoreTotal.ties++;
-          }
-          document.querySelector('.js-display-score').innerHTML=`  Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreTotal.ties}`;
-
-
-      
-        }
-        document.querySelector('.js-moves').innerHTML = `You
-         <img src="./emojis/${playerMove}-emoji.png" class="move-icon">
-          <img src="./emojis/${moveCopy}-emoji.png" class="move-icon">
-        Computer`;
-
-        console.log(scoreTotal.chips);
-        document.querySelector('.js-score').innerHTML = `${result} -  Chip Amount $${scoreTotal.chips}`;
-
         return result;
       }
     
