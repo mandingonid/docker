@@ -9,7 +9,7 @@
       <link
         rel="stylesheet"
         href="../styles/rochambeauDom2.css"
-      >
+      > 
 
   </head>
 
@@ -54,11 +54,35 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       <img src="../emojis/scissors-emoji.png" class="move-icon move-button">
     </button>
 
+    <p class="js-current-bet current-bet"></p>
+
+
+    <div class="dropdown">
+      <div class="select">
+        <span class="selected">Bet Amount</span>
+        <div class="caret"></div>
+      </div>
+      <ul class="menu">
+        <li ><a href="#" class="js-bet-amount bet-amount" onclick="betAmount=1;">$1</a></li>
+        <li><a href="#" class="js-bet-amount bet-amount" onclick="betAmount=5;">$5</a></li>
+        <li><a href="#" onclick="betAmount=10;">$10</a></li>
+        <li><a href="#" onclick="betAmount=15;">$15</a></li>
+        <li><a href="#" onclick="betAmount=20;">$20</a></li>
+        <li><a href="#" onclick="betAmount=25;">$25</a></li>
+        <li><a href="#" onclick="betAmount=30;">$30</a></li>
+        <li><a href="#" onclick="betAmount=35;">$35</a></li>
+        <li><a href="#" onclick="betAmount=40;">$40</a></li>
+        <li><a href="#" onclick="betAmount=45;">$45</a></li>
+        <li><a href="#" onclick="betAmount=50;">$50</a></li>
+      </ul>
+    </div>
+
+
     <p class="js-display-score display-score"></p>
 
-    <p class="js-moves"></p>
+    <p class="js-moves moves"></p>
 
-    <p class="js-score"></p>
+    <p class="js-score score"></p>
 
     <p class="bottom-make-space"></p>
     
@@ -69,29 +93,41 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       scoreTotal.wins = 0;
       scoreTotal.losses = 0;
       scoreTotal.ties = 0;
+      scoreTotal.chips = 200;
       localStorage.setItem(keySaved, 'false');
       console.log(scoreTotal);
     ">Reset Score</button>
 
-    <button class="js-button-quit button-quit is-button-quit" onclick="
-      buttonElementQuit  = document.querySelector('.js-button-quit');
+    <button class="js-button-save button-save is-button-save" onclick="
+      buttonElementQuit  = document.querySelector('.js-button-save');
       let stringScore = '';
       stringScore = JSON.stringify(scoreTotal);
       console.log(stringScore);
       console.log(scoreTotal);
       houseKeeping(stringScore);
-      if(buttonElementQuit.innerText === 'Quit'){
-        buttonElementQuit.innerHTML = 'Quit';
-        buttonElementQuit.classList.add('is-button-quit');
-      } else {
-        buttonElementQuit.innerHTML = 'Quit';
-        buttonElementQuit.classList.remove('is-button-quit'); 
-      }
-    ">Quit</button> 
+ 
+    ">Save Game</button> 
 
+    <p> </p>
+
+    <button class="js-button-quit button-quit is-button-quit" onclick="
+    buttonElementQuit  = document.querySelector('.js-button-quit');
+    let stringScore = '';
+    stringScore = JSON.stringify(scoreTotal);
+    console.log(stringScore);
+    console.log(scoreTotal);
+    houseKeeping(stringScore);
+    if(buttonElementQuit.innerText === 'Quit'){
+      buttonElementQuit.innerHTML = 'Quit';
+      buttonElementQuit.classList.add('is-button-quit');
+    } else {
+      buttonElementQuit.innerHTML = 'Quit';
+      buttonElementQuit.classList.remove('is-button-quit'); 
+    }
+  ">Quit</button> 
   
-
-    <script src="../scripts/rochembeauDom2.js"> </script>
+ 
+    <script src="../scripts/rochambeauDom2.js"> </script>
   
   </body>
 
