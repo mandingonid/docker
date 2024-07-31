@@ -54,6 +54,28 @@ Your progress: Wins ${scoreTotal.wins} Losses ${scoreTotal.losses} Ties ${scoreT
       <img src="./emojis/scissors-emoji.png" class="move-icon move-button">
     </button>
 
+    <div class="dropdown">
+      <div class="select">
+        <span class="selected">Bet Amount</span>
+        <div class="caret"></div>
+      </div>
+      <ul class="menu">
+        <li><a href="#" onclick="betAmount=1;">$1</a></li>
+        <li><a href="#" onclick="betAmount=5;">$5</a></li>
+        <li><a href="#" onclick="betAmount=10;">$10</a></li>
+        <li><a href="#" onclick="betAmount=15;">$15</a></li>
+        <li><a href="#" onclick="betAmount=20;">$20</a></li>
+        <li><a href="#" onclick="betAmount=25;">$25</a></li>
+        <li><a href="#" onclick="betAmount=30;">$30</a></li>
+        <li><a href="#" onclick="betAmount=35;">$35</a></li>
+        <li><a href="#" onclick="betAmount=40;">$40</a></li>
+        <li><a href="#" onclick="betAmount=45;">$45</a></li>
+        <li><a href="#" onclick="betAmount=50;">$50</a></li>
+      </ul>
+    </div>
+
+    <p class="js-current-bet current-bet"></p>
+
     <p class="js-display-score display-score"></p>
 
     <p class="js-moves moves"></p>
