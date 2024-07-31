@@ -11,10 +11,10 @@ body{
 
 .button-rock{
   background-color:  black;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   font-weight: bold;
   border-radius: 60px;
   cursor: pointer;
@@ -24,10 +24,10 @@ body{
 
 .button-paper{
   background-color:  black;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   font-weight: bold;
   border-radius: 60px;
   cursor: pointer;
@@ -38,14 +38,14 @@ body{
 
 .button-scissors{
   background-color:  black;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   font-weight: bold;
   border-radius: 60px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -56,7 +56,7 @@ body{
 
 .move-button{
   background-color: transparent;
-  border: 2px solid yellow
+  border: 2px solid yellow;
   border-radius: 60px;
 }
 
@@ -89,7 +89,7 @@ body{
   border-radius: 50px;
   cursor: pointer;
   margin-bottom: 20px;
-  margin-left: 15px.
+  margin-left: 15px;
 }
 
 
@@ -105,7 +105,7 @@ body{
   border-radius: 50px;
   cursor: pointer;
   margin-bottom: 20px;
-  margin-left: 15px.
+  margin-left: 15px;
 }
 .is-button-quit{
   background-color: green;
@@ -137,6 +137,118 @@ body{
   color: yellow;
   font-weight: bold;
 }
+
+.menu {
+  list-style: none;
+  font-size: 15px;
+  color: red;
+  background-color: grey;
+  padding: 0.2em 0.5em;
+  margin-left: 375px;
+  border: 1px #363a43;
+  box-shadow: 0 0.5em 1em rgba(62, 55, 55, 0.2);
+  border-radius: 0.5em;
+  position: absolute;
+  width: 30px;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+
+}
+
+.menu li {
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: black;
+  padding: 0/7em 0/5em;
+  margin: 0/3em 0;
+  border-radius: 0,5em;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.menu li:hover {
+  background: #2a2d35;
+
+}
+
+.menu-open {
+display: block;
+opacity: 1;
+
+}
+
+.js-current-bet{
+  color: yellow;
+  background-color: black;
+  margin-left: 300px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.js-bet-amount{
+  color: black;
+  background-color: grey;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.active {
+  background: #23242a;
+}
+
+.dropdown * {
+  box-sizing: border-box;
+}
+
+.select{
+  background: #2a2ff3b;
+  color: #fff;
+  text-align: center;
+  width: 12%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px #2a2f3b solid;
+  margin-left: 300px;
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.selected{
+
+  width: 90px;
+}
+
+.select-clicked{
+  border: 2px #26489a solid;
+  box-shadow: 0 0 0.8em #26489a;
+}
+
+.select:hover{
+  background: #323741;
+}
+
+.caret{
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  transition: 0.3s;
+}
+
+.caret-rotate{
+  transform: rotate(180deg);
+
+}
+
 .bottom-make-space{
   margin-top: 75px;
 }
