@@ -11,10 +11,10 @@ body{
 
 .button-rock{
   background-color:  black;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
   font-weight: bold;
   border-radius: 60px;
   cursor: pointer;
@@ -24,10 +24,10 @@ body{
 
 .button-paper{
   background-color:  black;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
   font-weight: bold;
   border-radius: 60px;
   cursor: pointer;
@@ -38,10 +38,10 @@ body{
 
 .button-scissors{
   background-color:  black;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
   font-weight: bold;
   border-radius: 60px;
   cursor: pointer;
@@ -149,7 +149,7 @@ body{
   box-shadow: 0 0.5em 1em rgba(62, 55, 55, 0.2);
   border-radius: 0.5em;
   position: absolute;
-  width: 30px;
+  width: 40px;
   transform: translateX(-50%);
   opacity: 0;
   display: none;
@@ -162,7 +162,7 @@ body{
   text-align: center;
   font-size: 17px;
   font-weight: bold;
-  color: black;
+  color: purple;
   padding: 0/7em 0/5em;
   margin: 0/3em 0;
   border-radius: 0,5em;
@@ -191,10 +191,11 @@ opacity: 1;
 }
 
 .js-bet-amount{
-  color: black;
+  color: purple;
   background-color: grey;
+  padding: 10;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 23px;
 }
 
 .active {
