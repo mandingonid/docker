@@ -10,7 +10,7 @@
         wins: 0,
         losses: 0,
         ties: 0,
-        chips: 200,
+        chips: 450,
         method: function display(){console.log(`display score method: ${scoreTotal}`)}
       };
 
@@ -27,7 +27,7 @@
         console.log(`Retrieved scores: ${tempObj}`);
         scoreTotal = JSON.parse(tempObj);
         console.log(`previous score: ${scoreTotal}`);
-        scoreTotal.chips = 450;
+        // scoreTotal.chips = 450;
       }
       else
         houseKeeping(JSON.stringify(scoreTotal));
@@ -139,7 +139,7 @@
 
         
           }
-          document.querySelector('.js-moves').innerHTML = `You
+          document.querySelector('.js-moves').innerHTML = `Mattia 
             <img src="../emojis/${playerMove}-emoji.png" class="move-icon">
             <img src="../emojis/${moveCopy}-emoji.png" class="move-icon">
           Computer`;
@@ -147,7 +147,7 @@
           console.log(scoreTotal.chips);
           document.querySelector('.js-score').innerHTML = `${result} -  Chip Balance $${scoreTotal.chips}`;
         }
-        else
+        else   // Negative chip balance
         {
           scoreTotal.chips = 220;
           houseKeeping(score.Total);
