@@ -1,0 +1,22 @@
+DATABASE_URL=postgresql://postgres:computabone@localhost:5432/postgres
+
+.PHONY: run-postgres
+run-postgres:
+	@echo Starting postgres container 
+	docker run \
+		-e POSTGRES_PASSWORD=computabone \
+		-v pgdata:/var/lib/postgresql/data \
+		-p 5431:5432 \
+		-it \
+		postgres:alpine
+
+.PHONY: run-api-node
+run-api-node:
+	@echo Starting API Node container
+	cd api-node && \
+		DATABASE_URL=$(DATABASE_URL) \
+		npm run dev
+
+.PHONY: run-api-golang
+run-api-golang:
+	@echo Starting API Golang container
