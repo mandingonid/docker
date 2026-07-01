@@ -9,7 +9,7 @@ RUN git clone https://github.com/aristocratos/btop.git /opt/btop && cd /opt/btop
 make && make install
 
 # Clean up
-RUN apk del git build-base ncurses-dev && rm -rf /var/cache/apk/* /opt/btop
+RUN apk  del git build-base ncurses-dev && rm -rf /var/cache/apk/* /opt/btop
 
 # Set the command to run btop
 CMD ["btop"]
