@@ -1,0 +1,22 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "Docker development with Node and Javascript",
+  "main": "index.js",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "vite",
+      "start": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandingonid/docker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mandingonid/docker/issues"
+  },
+  "homepage": "https://github.com/mandingonid/docker#readme"
+}
