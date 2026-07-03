@@ -58,7 +58,8 @@ COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
 ###  EXPOSE 5173
 
-# command to run the app
+# command to run the app continously in the foreground. This is necessary for Docker to keep the container running.
+
  CMD ["nginx", "-g", "daemon off;"]
 
 # CMD npm run dev
